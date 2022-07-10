@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <img src="hands.jpeg" alt="">
+        <h1>Rock Paper Scissors</h1>
+    </header>
+    <main>
+        <section>
+            <nav class="rules-link">
+                <a href="/rules"> Learn to play! </a>
+            </nav>
+        </section>
+        <section class="lets-play">
+            <h2>Let's play!</h2>
+        </section>
+        <section class="rules">
+            <h3>Rock beats Scissors. Scissors beats Paper. Paper beats Rock.</h3>
+        </section>
+        <div class="player-choices">
+            <form action="/" method="post" id="form">
+            <label for="">Player One: </label>
+            <input type="text" id="input-choice" name="player1-choice" required placeholder="Rock/Paper/Scissors">
+            <label for="">Player Two: </label>
+            <input type="text" id="input-choice" name="player2-choice" required placeholder="Rock/Paper/Scissors">
+            <br>
+            <button class="button">PLAY</button>
+            </form>
+        </div>
+        <br>
+        <br>
+        <section class="result">
+        {{ play_round }}
+        </section>  
+    </main>
+</body>
+</html>
